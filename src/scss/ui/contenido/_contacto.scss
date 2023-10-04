@@ -1,0 +1,44 @@
+@use 'base/variables' as v; 
+@use 'base/mixins' as m;
+
+.contacto{
+    margin-top: 10rem;
+
+    &__tittle{
+        margin: 0;
+        margin-bottom: v.$separacion;
+    }
+
+    &__icons{
+        
+        @include m.tablet {
+            display: flex;
+            justify-content: center;
+            gap: 10rem;
+        }
+    }
+
+    &__medio{
+        margin-bottom: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        @include m.tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &__medio:last-of-type{
+        margin-bottom: 0;
+    }
+
+    &__description{
+        font-weight: 700;
+    }
+
+    &__numero{
+        margin: 0;
+        color: lighten( v.$darkGray, 50); 
+    }
+}

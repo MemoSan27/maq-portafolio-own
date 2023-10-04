@@ -1,0 +1,73 @@
+@use 'base/variables' as v; 
+@use 'base/mixins' as m;
+
+.nav{
+    background-color: v.$white;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    @include m.tablet {
+        position: static;
+        background-color: white;
+        width: 90%;
+        padding: 0;
+    }
+    
+    &__list{
+        margin: 0;
+        position: absolute;
+        top: 5.2rem;
+        right: -100%;
+        border: 1px solid v.$white;
+        border-bottom: none;
+        padding: 0;
+        background-color: v.$purple;
+        transition: right .5s ease-in-out;
+        @include m.tablet {
+            position: static;
+            padding: 0;
+            margin: 5rem 0;
+            display: flex;
+            gap: 6rem;
+            justify-content: flex-end;
+            border: none;   
+            background-color: transparent;
+        }
+    }
+
+    &__list.active{
+            right: 0.2rem;
+            transition: right .5s ease-in-out;
+        }
+    
+
+    &__border{
+        border-bottom: 1px solid v.$white;
+        padding: 1rem;
+        color: v.$white;
+        transition: all 300ms;
+        @include m.tablet {
+            padding: 0;
+            border: none;
+            color: v.$dark;
+        }
+    }
+
+    &__border:hover{
+        @include m.tablet {
+            color: v.$purple;
+        }
+    }
+
+    &__btn{
+        height: max-content;
+        @include m.tablet {
+            display: none;
+        }
+    }
+}
+

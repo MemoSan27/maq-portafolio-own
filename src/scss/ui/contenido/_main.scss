@@ -1,0 +1,78 @@
+@use 'base/variables' as v; 
+@use 'base/mixins' as m;
+
+.principal{
+    margin-top: 17rem;
+    padding: 3rem 0;
+    background-color: v.$yellow;
+    @include m.tablet {
+        margin-top: 10rem;
+    }
+
+    &__division{
+        margin-bottom: v.$separacion;
+        @include m.desktop {
+            @include m.grid( 2, v.$separacion);
+        }
+        
+    }
+
+    &__tittle{
+        @include m.desktop {
+            max-width: 30rem;
+        }
+    }
+
+    &__experiencia{
+        margin-top: v.$separacion;
+        @include m.desktop {
+            margin: 0;
+        }
+    }
+
+    &__flex{
+        display: flex;
+        gap: v.$separacion;
+        @include m.tablet {
+            gap: 10rem;
+        }
+        @include m.desktop {
+            gap: v.$separacion;
+        }
+
+    }
+
+    &__bold{
+        font-weight: 700;
+    }
+}
+
+.habilidades{
+    @include m.tablet {
+        display: flex;
+        justify-content: center;
+        gap: 8rem;
+    }
+
+    &__icon{
+        width: 6.4rem;
+        height: 6.4rem;
+    }
+
+    &__flex{
+        display: flex;
+        flex-direction: column;  
+        align-items: center;
+        text-align: center;  
+        margin-bottom: v.$separacion;
+        @include m.tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &__description{
+        max-width: 18.5rem;
+    }
+    
+
+}

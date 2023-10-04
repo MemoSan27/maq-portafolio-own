@@ -1,0 +1,26 @@
+@use 'base/variables' as v; 
+@use 'base/mixins' as m;
+
+.footer{
+    margin-top: 10rem;
+
+    &__description{
+        font-size: 1.3rem;
+        text-align: center;
+        color: v.$purple;
+    }
+    
+    &__heart{
+        content: '';
+        position: relative;
+        display: inline-block;
+        background-image: url(../icons/heart.png);
+        background-repeat: no-repeat;
+        width: 2.3rem;
+        height: 2.3rem;
+        background-position: center center;
+        top: 0.5rem;
+    }
+
+    
+}
